@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../constant.dart';
+import '../utils/colorConstant/colors.dart';
 import 'homepage.dart';
 
 class SplashScreen extends StatefulWidget {

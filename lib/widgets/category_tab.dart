@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:grocery/constant.dart';
-import 'package:grocery/widgets/catergory/dairy.dart';
-import 'package:grocery/widgets/catergory/frozen.dart';
-import 'package:grocery/widgets/catergory/snacks.dart';
-import 'package:grocery/widgets/catergory/vegetables.dart';
-import 'catergory/bakery.dart';
-import 'catergory/fruits.dart';
+import 'package:grocery/utils/colorConstant/colors.dart';
+
+import '../presentation/catergory/bakery.dart';
+import '../presentation/catergory/dairy.dart';
+import '../presentation/catergory/frozen.dart';
+import '../presentation/catergory/fruits.dart';
+import '../presentation/catergory/snacks.dart';
+import '../presentation/catergory/vegetables.dart';
 
 class ItemsTab extends StatefulWidget {
   const ItemsTab({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _ItemsTabState extends State<ItemsTab>
 
   late TabController _tabController;
   int current = 0;
+  List<String> cartItems = [];
 
   @override
   void initState() {
@@ -50,12 +52,13 @@ class _ItemsTabState extends State<ItemsTab>
             length: items.length,
             child: TabBar(
               controller: _tabController,
-              indicator:UnderlineTabIndicator(
+              indicator: UnderlineTabIndicator(
                 borderSide: BorderSide(
                   color: yellow, // Customize the indicator color
                   width: 3, // Customize the indicator thickness
                 ),
-                insets: EdgeInsets.symmetric(horizontal: 16), // Customize the indicator padding
+                insets: EdgeInsets.symmetric(
+                    horizontal: 16), // Customize the indicator padding
               ),
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
@@ -84,9 +87,9 @@ class _ItemsTabState extends State<ItemsTab>
               ),
               GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Number of columns in the grid
+                  crossAxisCount: 2,
                 ),
-                itemCount: 6, // Number of items in the grid
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return VegetableItem(index);
                 },
@@ -97,7 +100,7 @@ class _ItemsTabState extends State<ItemsTab>
                 ),
                 itemCount: 6, // Number of items in the grid
                 itemBuilder: (context, index) {
-                  return BakeryItem(index);
+                  return BakeryItem(index, cartItems);
                 },
               ),
               GridView.builder(

@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/cartpage.dart';
+import '../presentation/cartpage.dart';
+
 
 class BottomNavBar extends StatefulWidget {
 

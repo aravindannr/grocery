@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery/widgets/carousal.dart';
-import '../constant.dart';
+import '../utils/colorConstant/colors.dart';
 import '../widgets/appbar.dart';
 import '../widgets/bottombar.dart';
 import '../widgets/category_tab.dart';
@@ -28,7 +28,7 @@ class _HomepageState extends State<Homepage> {
           padding: const EdgeInsets.all(8.0),
           child: Search_Box(),
         ),
-        Carousal(),
+            CarouselWidget(),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(

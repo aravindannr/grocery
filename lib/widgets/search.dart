@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../constant.dart';
+import '../utils/colorConstant/colors.dart';
 
 class Search_Box extends StatelessWidget {
   const Search_Box({super.key});

@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
+import '../../utils/colorConstant/colors.dart';
 
-class Snack_Item extends StatefulWidget {
+class DairyItems extends StatefulWidget {
   final int index;
 
-  Snack_Item(this.index);
+  DairyItems(this.index);
+
 
   @override
-  State<Snack_Item> createState() => _Snack_ItemState();
+  State<DairyItems> createState() => _DairyItemsState();
 }
 
-class _Snack_ItemState extends State<Snack_Item> {
+class _DairyItemsState extends State<DairyItems> {
   List<String> img = [
     "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",
     "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",
@@ -38,6 +39,16 @@ class _Snack_ItemState extends State<Snack_Item> {
     "4.00",
     "4.00",
     "4.00",
+  ];
+
+  List<Map> items=[
+    {
+     " image " : "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",
+      "itemName" :"Avocado",
+      "itemPrice" :"4.00"
+    },{
+
+    }
   ];
 
   @override

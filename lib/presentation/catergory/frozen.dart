@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
+import '../../utils/colorConstant/colors.dart';
 
-class VegetableItem extends StatefulWidget {
+class FrozenItem extends StatefulWidget {
   final int index;
 
-  VegetableItem(this.index);
+  FrozenItem(this.index);
 
   @override
-  State<VegetableItem> createState() => _VegetableItemState();
+  State<FrozenItem> createState() => _FrozenItemState();
 }
 
-class _VegetableItemState extends State<VegetableItem> {
+class _FrozenItemState extends State<FrozenItem> {
   List<String> img = [
     "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",
     "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",

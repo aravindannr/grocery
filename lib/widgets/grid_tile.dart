@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery/constant.dart';
+import 'package:grocery/utils/colorConstant/colors.dart';
 
 class GroceryItemTile extends StatelessWidget {
   final String itemName;

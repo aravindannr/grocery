@@ -1,18 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
+import '../../utils/colorConstant/colors.dart';
 
-class FruitsItem extends StatefulWidget {
+class BakeryItem extends StatefulWidget {
   final int index;
+  final List<String> cartItems;
 
-  FruitsItem(this.index);
+
+  BakeryItem(this.index, this.cartItems);
 
   @override
-  State<FruitsItem> createState() => _FruitsItemState();
+  State<BakeryItem> createState() => _BakeryItemState();
 }
 
-class _FruitsItemState extends State<FruitsItem> {
+class _BakeryItemState extends State<BakeryItem> {
   List<String> img = [
     "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",
     "assets/images/cute-avocado-cartoon-icon-illustration-free-vector.jpg",
@@ -72,6 +74,9 @@ class _FruitsItemState extends State<FruitsItem> {
 
             MaterialButton(
               onPressed: () {
+                setState(() {
+                  widget.cartItems.add(itemName[widget.index]);
+                });
               },
               color: green,
               child: Text(
