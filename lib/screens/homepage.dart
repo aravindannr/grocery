@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery/widgets/carousal.dart';
-
+import '../constant.dart';
 import '../widgets/appbar.dart';
+import '../widgets/bottombar.dart';
 import '../widgets/category_tab.dart';
 import '../widgets/search.dart';
 
@@ -37,8 +39,27 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
         ),
-        Container(height: 80, child: ItemsTab())
+        Container(height: 650, child: ItemsTab()),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              "For more",
+              style: GoogleFonts.notoSerif(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: yellow
+            ),
+            ),
+            IconButton(onPressed: (){},
+                icon: Icon(Icons.arrow_forward,size: 18,
+                color: bl,))
+          ],
+        )
+
       ]))
-    ])));
+    ])),
+    bottomNavigationBar: BottomNavBar(),
+    );
   }
 }

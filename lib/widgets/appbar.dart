@@ -36,7 +36,7 @@ class App_Bar_sliver extends StatelessWidget {
       ),
       actions: [
         CircleAvatar(
-          backgroundColor: CupertinoColors.white,
+          backgroundColor: brown,
           child: IconButton(
               onPressed: () {},
               icon: Icon(Icons.notifications_active_outlined,color: blue,)),
