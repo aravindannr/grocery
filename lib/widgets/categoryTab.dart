@@ -49,11 +49,11 @@ class _ItemsTabState extends State<ItemsTab>
               controller: _tabController,
               indicator: UnderlineTabIndicator(
                 borderSide: BorderSide(
-                  color: yellow, // Customize the indicator color
-                  width: 3, // Customize the indicator thickness
+                  color: yellow,
+                  width: 3,
                 ),
                 insets: EdgeInsets.symmetric(
-                    horizontal: 16), // Customize the indicator padding
+                    horizontal: 16),
               ),
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
@@ -76,15 +76,15 @@ class _ItemsTabState extends State<ItemsTab>
                   crossAxisCount: 2,
                   childAspectRatio: 1 / 1.2,
                 ),
-                itemCount: value.items.length,
+                itemCount: value.dairyitems.length,
                 itemBuilder: (context, index) {
                   return GroceryItemTile(
-                    itemName: value.items[index][1],
-                    itemPrice: value.items[index][2],
-                    imagePath: value.items[index][0],
+                    itemName: value.fruisitems[index][1],
+                    itemPrice: value.fruisitems[index][2],
+                    imagePath: value.fruisitems[index][0],
                     onPressed: () {
                       Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
+                          .FaddItemToCart(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Row(
@@ -118,12 +118,12 @@ class _ItemsTabState extends State<ItemsTab>
                 itemCount: 6,
                 itemBuilder: (context, index) {
                   return GroceryItemTile(
-                    itemName: value.items[index][1],
-                    itemPrice: value.items[index][2],
-                    imagePath: value.items[index][0],
+                    itemName: value.vegetableitems[index][1],
+                    itemPrice: value.vegetableitems[index][2],
+                    imagePath: value.vegetableitems[index][0],
                     onPressed: () {
                       Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
+                          .VaddItemToCart(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Row(
@@ -158,12 +158,51 @@ class _ItemsTabState extends State<ItemsTab>
                 itemCount: 6,
                 itemBuilder: (context, index) {
                   return GroceryItemTile(
-                    itemName: value.items[index][1],
-                    itemPrice: value.items[index][2],
-                    imagePath: value.items[index][0],
+                    itemName: value.bakeryitems[index][1],
+                    itemPrice: value.bakeryitems[index][2],
+                    imagePath: value.bakeryitems[index][0],
                     onPressed: () {
                       Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
+                          .BaddItemToCart(index);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Row(
+                            children: const [
+                              Icon(Icons.shopping_cart),
+                              SizedBox(width: 8),
+                              Text('Item added to cart'),
+                            ],
+                          ),
+                          backgroundColor: Colors.blueGrey,
+                          duration: Duration(seconds: 2),
+                          behavior: SnackBarBehavior.floating,
+                          action: SnackBarAction(
+                            label: 'Undo',
+                            onPressed: () {
+                              Provider.of<CartModel>(context, listen: false)
+                                  .undoLastItem();
+                            },
+                            textColor: Colors.white,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+              GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return GroceryItemTile(
+                    itemName: value.dairyitems[index][1],
+                    itemPrice: value.dairyitems[index][2],
+                    imagePath: value.dairyitems[index][0],
+                    onPressed: () {
+                      Provider.of<CartModel>(context, listen: false)
+                          .DaddItemToCart(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Row(
@@ -192,17 +231,17 @@ class _ItemsTabState extends State<ItemsTab>
               ),
               GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Number of columns in the grid
+                  crossAxisCount: 2,
                 ),
-                itemCount: 6, // Number of items in the grid
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return GroceryItemTile(
-                    itemName: value.items[index][1],
-                    itemPrice: value.items[index][2],
-                    imagePath: value.items[index][0],
+                    itemName: value.frozenitems[index][1],
+                    itemPrice: value.frozenitems[index][2],
+                    imagePath: value.frozenitems[index][0],
                     onPressed: () {
                       Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
+                          .FaddItemToCart(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Row(
@@ -231,56 +270,17 @@ class _ItemsTabState extends State<ItemsTab>
               ),
               GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Number of columns in the grid
+                  crossAxisCount: 2,
                 ),
-                itemCount: 6, // Number of items in the grid
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return GroceryItemTile(
-                    itemName: value.items[index][1],
-                    itemPrice: value.items[index][2],
-                    imagePath: value.items[index][0],
+                    itemName: value.snacksitems[index][1],
+                    itemPrice: value.snacksitems[index][2],
+                    imagePath: value.snacksitems[index][0],
                     onPressed: () {
                       Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Row(
-                            children: [
-                              Icon(Icons.shopping_cart),
-                              SizedBox(width: 8),
-                              Text('Item added to cart'),
-                            ],
-                          ),
-                          backgroundColor: Colors.blueGrey,
-                          duration: Duration(seconds: 2),
-                          behavior: SnackBarBehavior.floating,
-                          action: SnackBarAction(
-                            label: 'Undo',
-                            onPressed: () {
-                              Provider.of<CartModel>(context, listen: false)
-                                  .undoLastItem();
-                            },
-                            textColor: Colors.white,
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
-              GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Number of columns in the grid
-                ),
-                itemCount: 6, // Number of items in the grid
-                itemBuilder: (context, index) {
-                  return GroceryItemTile(
-                    itemName: value.items[index][1],
-                    itemPrice: value.items[index][2],
-                    imagePath: value.items[index][0],
-                    onPressed: () {
-                      Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
+                          .SaddItemToCart(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Row(

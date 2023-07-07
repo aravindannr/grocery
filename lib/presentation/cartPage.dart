@@ -18,7 +18,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: yellow,
+          backgroundColor: brown,
           title: Text(
             " My cart",
             style: GoogleFonts.notoSerif(
@@ -62,6 +62,7 @@ class _CartPageState extends State<CartPage> {
                               leading: Image.asset(
                                 value.cartItems[index][0],
                                 height: 36,
+                                fit: BoxFit.contain,
                               ),
                               title: Text(
                                 value.cartItems[index][1],
@@ -115,26 +116,27 @@ class _CartPageState extends State<CartPage> {
                             ),
                           ],
                         ),
-
-                        // pay now
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.green.shade200),
-                            borderRadius: BorderRadius.circular(28),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          child: Row(
-                            children: const [
-                              Text(
-                                'Pay Now',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                size: 16,
-                                color: Colors.white,
-                              ),
-                            ],
+                        TextButton(
+                          onPressed: () {  },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green.shade200),
+                              borderRadius: BorderRadius.circular(28),
+                            ),
+                            padding: const EdgeInsets.all(12),
+                            child: Row(
+                              children: const [
+                                Text(
+                                  'Pay Now',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 16,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
