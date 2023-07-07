@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery/widgets/carousal.dart';
 import '../utils/colorConstant/colors.dart';
-import '../widgets/appbar.dart';
-import '../widgets/bottombar.dart';
-import '../widgets/category_tab.dart';
+import '../widgets/appBar.dart';
+import '../widgets/bottomBar.dart';
+import '../widgets/categoryTab.dart';
 import '../widgets/search.dart';
 
 class Homepage extends StatefulWidget {

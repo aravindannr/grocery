@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../presentation/notification.dart';
 import '../utils/colorConstant/colors.dart';
 
 class App_Bar_sliver extends StatelessWidget {
@@ -10,9 +11,9 @@ class App_Bar_sliver extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: white,
-      title:  Align(
+      title: Align(
         alignment: Alignment.centerLeft,
-        child:RichText(
+        child: RichText(
           text: TextSpan(
             text: 'GRO',
             style: TextStyle(
@@ -23,7 +24,9 @@ class App_Bar_sliver extends StatelessWidget {
             children: [
               TextSpan(
                 text: 'CERY',
-                style: TextStyle(color: blue,fontFamily: 'poppins',
+                style: TextStyle(
+                    color: blue,
+                    fontFamily: 'poppins',
                     fontSize: 30,
                     fontWeight: FontWeight.bold),
               )
@@ -32,14 +35,26 @@ class App_Bar_sliver extends StatelessWidget {
         ),
       ),
       floating: true,
-      leading: Icon(color: blue,(Icons.shopping_cart_outlined),
+      leading: Icon(
+        color: blue,
+        (Icons.shopping_cart_outlined),
       ),
       actions: [
         CircleAvatar(
           backgroundColor: brown,
           child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.notifications_active_outlined,color: blue,)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationScreen(),
+                  ),
+                );
+              },
+              icon: Icon(
+                Icons.notifications_active_outlined,
+                color: blue,
+              )),
         ),
       ],
       shape: RoundedRectangleBorder(

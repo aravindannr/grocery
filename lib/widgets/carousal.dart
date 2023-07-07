@@ -25,7 +25,6 @@ class _CarouselWidgetState extends State<CarouselWidget> {
         products = fetchedProducts;
       });
     } catch (e) {
-      // Handle error
       print('Error fetching products: $e');
     }
   }

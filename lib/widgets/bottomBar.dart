@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../presentation/cartpage.dart';
+import '../presentation/cartPage.dart';
 
 
 class BottomNavBar extends StatefulWidget {
 
-  BottomNavBar({Key? key}) : super(key: key);
+  const BottomNavBar({Key? key}) : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -38,7 +38,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               },
               icon: Icon(Icons.favorite),
             ),
-            SizedBox(width: 32.0), // Add space for the FAB
+
             IconButton(
               onPressed: () {
                 setState(() {
@@ -48,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   );
                 });
               },
-              icon: Icon(Icons.shopping_cart_outlined),
+              icon: Icon(Icons.shopping_cart),
             ),
             IconButton(
               onPressed: () {
