@@ -7,19 +7,18 @@ import '../widgets/bottomBar.dart';
 import '../widgets/categoryTab.dart';
 import '../widgets/search.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomepageState extends State<Homepage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            child: CustomScrollView(slivers: [
+        body: CustomScrollView(slivers: [
       App_Bar_sliver(),
       SliverList(
           delegate: SliverChildListDelegate([
@@ -27,37 +26,37 @@ class _HomepageState extends State<Homepage> {
           padding: const EdgeInsets.all(8.0),
           child: Search_Box(),
         ),
-            CarouselWidget(),
+        CarouselWidget(),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "Search By Category",
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: "poppins",
-            ),
+        "Search By Category",
+        style: TextStyle(
+          fontSize: 20,
+          fontFamily: "poppins",
+        ),
           ),
         ),
-        Container(height: 650, child: ItemsTab()),
+        SizedBox(height: 650, child: ItemsTab()),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(
-              "For more",
-              style: GoogleFonts.notoSerif(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: yellow
-            ),
-            ),
-            IconButton(onPressed: (){},
-                icon: Icon(Icons.arrow_forward,size: 18,
-                color: bl,))
+        Text(
+          "For more",
+          style: GoogleFonts.notoSerif(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: yellow
+        ),
+        ),
+        IconButton(onPressed: (){},
+            icon: Icon(Icons.arrow_forward,size: 18,
+            color: bl,))
           ],
         )
 
       ]))
-    ])),
+    ]),
     bottomNavigationBar: BottomNavBar(),
     );
   }

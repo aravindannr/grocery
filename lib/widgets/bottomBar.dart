@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../presentation/account/account.dart';
 import '../presentation/cartPage.dart';
+import '../presentation/homePage.dart';
 
 
 class BottomNavBar extends StatefulWidget {
@@ -28,6 +29,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               onPressed: () {
                 setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                  );
                 });
               },
               icon: Icon(Icons.home),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../presentation/notification.dart';
@@ -21,7 +20,7 @@ class App_Bar_sliver extends StatelessWidget {
                 fontFamily: 'poppins',
                 fontSize: 30,
                 fontWeight: FontWeight.bold),
-            children: [
+            children: const [
               TextSpan(
                 text: 'CERY',
                 style: TextStyle(

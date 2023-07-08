@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery/presentation/homePage.dart';
+import 'package:grocery/presentation/splash.dart';
 import 'package:provider/provider.dart';
 
 import 'model/cartModel.dart';
@@ -16,7 +15,7 @@ class GroceryApp extends StatelessWidget {
     return  ChangeNotifierProvider(
       create: (context)=> CartModel(),
       child: MaterialApp(
-        home: Homepage(),
+        home: SplashScreen(),
         title: "SLR SHOPPEE",
         debugShowCheckedModeBanner: false,
       ),
