@@ -148,7 +148,6 @@ class _ItemsTabState extends State<ItemsTab>
                       );
                     },
                   );
-                  ;
                 },
               ),
               GridView.builder(
@@ -241,7 +240,7 @@ class _ItemsTabState extends State<ItemsTab>
                     imagePath: value.frozenitems[index][0],
                     onPressed: () {
                       Provider.of<CartModel>(context, listen: false)
-                          .FaddItemToCart(index);
+                          .FraddItemToCart(index);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Row(
